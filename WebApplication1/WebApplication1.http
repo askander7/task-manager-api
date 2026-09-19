@@ -1,0 +1,41 @@
+@WebApplication1_HostAddress = http://localhost:5074
+
+###
+GET {{WebApplication1_HostAddress}}/api/tasks
+Accept: application/json
+###
+GET {{WebApplication1_HostAddress}}/api/tasks/1
+Accept: application/json
+###
+POST {{WebApplication1_HostAddress}}/api/Tasks
+Content-Type: application/json
+{
+    "Title": "Learn Angular Signals",
+    "Description": "Build a small Angular example",
+    "IsCompleted": false
+}
+###
+PUT {{WebApplication1_HostAddress}}/api/Tasks/1
+Content-Type: application/json
+{
+    "Title": "Learn Angular Signals",
+    "Description": "Build a small Angular example",
+    "IsCompleted": true
+}
+###
+DELETE {{WebApplication1_HostAddress}}/api/Tasks/1
+
+###
+POST {{WebApplication1_HostAddress}}/api/Auth/login
+Content-Type: application/json
+{
+    "Username": "admin",
+    "Password": "123"
+}
+###
+POST {{WebApplication1_HostAddress}}/api/Tasks/transaction-test
+Content-Type: application/json
+{
+   
+}
+
