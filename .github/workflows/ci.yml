@@ -24,6 +24,9 @@ jobs:
       - name: Restore
         run: dotnet restore WebApplication1/WebApplication1.sln
 
+      - name: Build Docker image
+        run: docker build -t task-manager-api ./WebApplication1
+
       - name: Build
         run: dotnet build WebApplication1/WebApplication1.sln --no-restore --configuration Release
 
